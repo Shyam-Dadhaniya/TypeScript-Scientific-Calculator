@@ -1,7 +1,9 @@
 # TypeScript-Scientific-Calculator
 ## In this project we use HTML, CSS, JavaScript & TypeScript.
+### Image of Scientific-Calculator:
+![Screenshot from 2022-02-08 11-54-59](https://user-images.githubusercontent.com/97106864/152930566-dda54ec2-a9ea-43dc-b877-ef84859e8689.png)
  ### Function of Calculator:
- 
+
 |Operation|Mathematical Function|
 |----|-----|
 |+|plus or addition|
