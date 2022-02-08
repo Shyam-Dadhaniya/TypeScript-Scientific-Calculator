@@ -25,3 +25,12 @@
 |M+|to add the presently displayed number to the value in memory. |
 |M-|to subtract the present value from the stored value.|
 |PI| PI is constant in Maths And It's value is 3.14|
+
+### How to make changes in this project:
+Step-1: Fisrt download the zip file of this Repo.<br/>
+Step-2: The extract that zip file.<br/>
+Step-3: Open this folder in code editor.<br/>
+Step-4: Open Terminal and Type command tsc in terminal it's create js file.<br/>
+Step-5: Run HTML file.<br/>
+
+### Prerequisite: Install Node npm and typescript.
