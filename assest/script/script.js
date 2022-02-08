@@ -1,3 +1,4 @@
+"use strict";
 /*Initial Step*/
 let operation = document.getElementById('operation');
 /**
@@ -143,16 +144,16 @@ function root() {
 }*/
 /*ERRO: Maximun call stack size exceeded */
 function factorial() {
-    let value = getCurrentValue();
-    function factorial(value) {
+    let value = Number(getCurrentValue());
+    function fact(value) {
         if (value == 1) {
             return 1;
         }
         else {
-            return value * factorial(value - 1);
+            return value * fact(value - 1);
         }
     }
-    let result = factorial(value);
+    let result = fact(value);
     operation.innerText = result.toString();
 }
 //-------------------------------------------Factorial End----------------------------------------------
@@ -309,8 +310,9 @@ function memoryRecall() {
  */
 function memoryClear() {
     mValue = 0;
-    if (mValue == 0)
+    if (mValue == 0) {
         document.getElementById("mc-on").style.color = "gray";
-    document.getElementById("mr-on").style.color = "gray";
+        document.getElementById("mr-on").style.color = "gray";
+    }
 }
 //-------------------------------------------Memory Function End--------------------------------------------------------------------------

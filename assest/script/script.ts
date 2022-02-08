@@ -30,7 +30,7 @@ function numberFormate(input: string) {
  * @description This function get the number when we click on button.
  * @param {*} e 
  */
-function addNum(e) {
+function addNum(e: any) {
     let char = e.getAttribute("data-value");
     let currentValue = getCurrentValue();
     currentValue += char;
@@ -164,15 +164,15 @@ function root() {
 }*/
 /*ERRO: Maximun call stack size exceeded */
 function factorial() {
-    let value = getCurrentValue();  
-    function factorial(value){   
+    let value = Number(getCurrentValue());  
+    function fact(value: number):number{   
     if (value == 1) {
     return 1;
     } else {
-    return value*factorial(value - 1);
+    return value*fact(value - 1);
     } 
     } 
-    let result = factorial(value); 
+    let result = fact(value); 
     operation.innerText = result.toString();    
 }
 //-------------------------------------------Factorial End----------------------------------------------
@@ -275,10 +275,10 @@ myTrigonometry = function trigonometry(method: string) {
             result = 1 / Math.tan(value);
             break;
     }
-    if (isNaN(result)) {
+    if (isNaN(result!)) {
         operation.innerText = "ERROR"
     } else {
-        operation.innerText = numberFormate(result.toString());
+        operation.innerText = numberFormate(result!.toString());
     }
 }
 //-------------------------------------------Trigonometry End-------------------------------------------
@@ -320,8 +320,8 @@ function memoryStore() {
     const value: number = Number(operation.innerText.replace(/,/g, ""));
     if (operation.innerText != "") {
         mValue = value;
-        document.getElementById("mc-on").style.color = "black";
-        document.getElementById("mr-on").style.color = "black";
+        document.getElementById("mc-on")!.style.color = "black";
+        document.getElementById("mr-on")!.style.color = "black";
     }
     operation.innerText = "";
 }
@@ -334,8 +334,8 @@ function memoryPlus() {
     const value: number = Number(operation.innerText.replace(/,/g, ""));
     if (operation.innerText != "") {
         mValue += value;
-        document.getElementById("mc-on").style.color = "black";
-        document.getElementById("mr-on").style.color = "black";
+        document.getElementById("mc-on")!.style.color = "black";
+        document.getElementById("mr-on")!.style.color = "black";
     }
     operation.innerText = "";
 }
@@ -348,8 +348,8 @@ function memoryMinus() {
     const value: number = Number(operation.innerText.replace(/,/g, ""));
     if (operation.innerText != "") {
         mValue -= value;
-        document.getElementById("mc-on").style.color = "black";
-        document.getElementById("mr-on").style.color = "black";
+        document.getElementById("mc-on")!.style.color = "black";
+        document.getElementById("mr-on")!.style.color = "black";
     }
     operation.innerText = "";
 }
@@ -370,9 +370,9 @@ function memoryRecall() {
  */
 function memoryClear() {
     mValue = 0
-    if (mValue == 0)
-        document.getElementById("mc-on").style.color = "gray";
-    document.getElementById("mr-on").style.color = "gray";
+    if (mValue == 0){
+    document.getElementById("mc-on")!.style.color = "gray";
+    document.getElementById("mr-on")!.style.color = "gray";}      
 }
 
 //-------------------------------------------Memory Function End--------------------------------------------------------------------------
